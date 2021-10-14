@@ -60,7 +60,9 @@ public class WeekTest {
 
     @Test
     public void testRemoveAll(){
-        week.isEmpty();
+        assertNull(week.getDays()[6]);
+        assertNull(week.getDays()[5]);
+        assertNull(week.getDays()[2]);
         Day day1 = new Day(6);
         Day day2 = new Day(5);
         Day day3 = new Day(2);
@@ -69,7 +71,9 @@ public class WeekTest {
         week.addDay(day3);
         assertNotNull(week);
         week.removeAll();
-        week.isEmpty();
+        assertNull(week.getDays()[6]);
+        assertNull(week.getDays()[5]);
+        assertNull(week.getDays()[2]);
 
     }
 }

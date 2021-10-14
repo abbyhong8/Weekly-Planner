@@ -115,6 +115,7 @@ public class WeeklyPlanner {
     //EFFECTS: check the task in this day.
 
 
+
     public boolean checkTask(Day thisDay) {
         System.out.println("Enter the task you want to check");
         String choice = scan.next();
@@ -134,12 +135,10 @@ public class WeeklyPlanner {
         } else if (choiceTask.equals("3")) {
             thisDay.removeTask(taskChoose.getWork());
             backMenu();
-        } else if (choiceTask.equals("4")) {
-            backMenu();
         } else {
             System.out.println("invalid choice");
         }
-
+        return false;
     }
 
     //MODIFY: this
