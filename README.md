@@ -1,23 +1,21 @@
-# Things Todo 
+# Weekly planner
 
 ## *What is it?* *Who can use?* 
-This is an application that is *not only a todo list*. Users can add their work to the list and once the work is done 
-or the work is finished, they can own a random sushi collection depend on the time they spent.
-Every one including students, teachers who need a todo list to provide them a clearer plan they needed to complete. 
-This application will also provide users the enjoyment of collection.
+This is an application for users to keep track on *weekly events* . Users can add their work to the day they choose.
+They can check the completion of each event or mark if the task is completed or not. After one week, they can choose to
+start a new week.
+Every one including students, teachers who want to become efficient and need a planner to provide them a clear plan can 
+use this application.
 
 ## *Why design this?*
-A todo list is useful to increase the efficiency and helps people to be self-disciplined. Most of thh to-do list 
-application only function for check-mark while people can have a higher motivation or the feel of accomplishment 
-by collecting different awards.
-
+A weekly planner is useful to increase the efficiency and helps people to be self-disciplined. I design the planner 
+weekly because week is a suitable period for people to plan. 
 # User Stories
-* As a user, I want to be able to add a task to my to-do list
-* As a user, I want to be able to view the list of tasks on my to-do list
-* As a user, I want to be able to delete a task from my to-do-list
-* As a user, I want to be able to mark a task as complete on my to-do list
-* As a user, I want to be able to view a sushi-box list
-* As a user, I want to be able to give a random sushi to my collection as I complete a task
-* As a user, I want to be able to view the list of collections on my collection list
-
+* As a user, I want to be able to add a day to a week
+* As a user, I want to be able to add a task to one day
+* As a user, I want to be able to mark a task as completed in one day
+* As a user, I want to be able to check the completion of each task
+* As a user, I want to be able to view the list of tasks on one day
+* As a user, I want to be able to delete a task from one day
+8 As a user, I want to be able to start a new week
 
