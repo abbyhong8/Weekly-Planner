@@ -29,10 +29,10 @@ public class Week {
         days[dn] = null;
     }
 
-    //EFFECTS: check if the week is empty?
-    public void isEmpty() {
-        this.isEmpty();      /////////
-    }
+//    //EFFECTS: check if the week is empty?
+//    public void isEmpty() {
+//        this.isEmpty();      /////////
+//    }
 
     //REQUIRES: There must be at least one day added for the week
     //MODIFY: week

@@ -90,8 +90,8 @@ public class WeeklyPlanner {
 
         int realDayN = Integer.parseInt(choice);
         Day thisDay = ww.getDays()[realDayN];
-        for (int i = 0; i == thisDay.checkNumber(); i++) {
-            System.out.println(thisDay.getTask(i));
+        for (int i = 0; i < thisDay.checkNumber(); i++) {
+            System.out.println((thisDay.getTask(i)).getWork());
         }
         System.out.println("1. choose an event");
         System.out.println("2. back to the menu");
