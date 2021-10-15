@@ -52,7 +52,7 @@ public class WeeklyPlanner {
 
     //EFFECTS: display the menu
     public void display() {
-        System.out.println("Choose your operation: (choose 1 to start the week!)");
+        System.out.println("Choose your operation: (choose 1 to start a new week!)");
         System.out.println("1. add a event");
         System.out.println("2. Visit one day (please enter an integer between 0-6)");
         System.out.println("3. Start a new week");
@@ -77,6 +77,7 @@ public class WeeklyPlanner {
             System.exit(0);
         } else {
             System.out.println("invalid choice...");
+            backMenu();
         }
     }
 
@@ -86,11 +87,11 @@ public class WeeklyPlanner {
     public void doAddEvent() {
         System.out.println("Which day in a week is the event on? please enter a number between 0-6");
         String dayNum = scan.nextLine();
+        int realDayNum = Integer.parseInt(dayNum);
+        Day day = ww.getDays()[realDayNum];
         System.out.println("What's the name of the event?");
         String eventName = scan.nextLine();
-        int realDayNum = Integer.parseInt(dayNum);
         Task task = new Task(eventName);
-        Day day = ww.getDays()[realDayNum];
         day.addTask(task);
        // ww.addDay(day);
         backMenu();
@@ -159,7 +160,8 @@ public class WeeklyPlanner {
     //EFFECT: clear the entire week
     public void doClearWeek() {
         ww.removeAll();
-        backMenu();
+        display();
+        runPlanner();
     }
 
     //EFFECT: check all the incomplete tasks
