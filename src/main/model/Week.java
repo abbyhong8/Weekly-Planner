@@ -1,5 +1,6 @@
 package model;
 
+//Week contains a list of seven days that included tasks in each day
 public class Week {
     private Day[] days; // is a integer from [0-6] seven days in a week. 0 is Sunday, 1 is Monday, 2 is Tuesday,
                         // 3 is Wednesday, 4 is Thursday, 5 is Friday, 6 is Saturday.

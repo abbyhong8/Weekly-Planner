@@ -1,12 +1,13 @@
 package model;
 
+// Task contains a string and a boolean to indicate the task is completed or not, every task is created as incomplete
+
 public class Task {
     private String work;  // the work to do
     private boolean completion; //to mark whether the work is complete or not
 
     // REQUIRES: Task has a non-zero length
     // EFFECTS: create a work to do
-
     public Task(String taskName) {
         this.work = taskName;
         this.completion = false;

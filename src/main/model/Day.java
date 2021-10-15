@@ -3,9 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+//Day is a list of Tasks for every day.
 public class Day {
-    private ArrayList<Task> workToDo;
-    private int dayNumInWeek;
+    private ArrayList<Task> workToDo;  //a day with a list of task
+    private int dayNumInWeek;          // the day number
 
     //EFFECTS: set is empty
     public Day(int dn) {
@@ -23,7 +24,7 @@ public class Day {
         workToDo.add(work);
     }
 
-        //REQURIES: The day must include at least one task
+    //REQURIES: The day must include at least one task
     //EFFECTS： get the task
     public Task getTask(int n) {
         return workToDo.get(n);
