@@ -4,7 +4,7 @@ package model;
 
 public class Task {
     private String work;  // the work to do
-    private boolean completion; //to mark whether the work is complete or not
+    private boolean completion; //to mark whether the work is complete or not, true is complete false is incomplete
 
     // REQUIRES: Task has a non-zero length
     // EFFECTS: create a work to do

@@ -11,12 +11,11 @@ use this application.
 A weekly planner is useful to increase the efficiency and helps people to be self-disciplined. I design the planner 
 weekly because week is a suitable period for people to plan. 
 # User Stories
-* As a user, I want to be able to add a day to a week
-* As a user, I want to be able to add a task to one day
+* As a user, I want to be able to add a task to the day I want
 * As a user, I want to be able to mark a task as completed in one day
 * As a user, I want to be able to check the completion of each task
 * As a user, I want to be able to view the list of tasks on one day
 * As a user, I want to be able to delete a task from one day
 * As a user, I want to be able to start a new week
-* As a user, I want to be able to check the total incomplete tasks
+* As a user, I want to be able to check the number of all incomplete tasks
 

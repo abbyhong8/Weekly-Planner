@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class WeeklyPlanner {
     private Week ww;
     private Scanner scan;
-    boolean keepGoing = true;
 
 
 
@@ -53,7 +52,7 @@ public class WeeklyPlanner {
 
     //EFFECTS: display the menu
     public void display() {
-        System.out.println("Choose your operation:");
+        System.out.println("Choose your operation: (choose 1 to start the week!)");
         System.out.println("1. add a event");
         System.out.println("2. Visit one day (please enter an integer between 0-6)");
         System.out.println("3. Start a new week");
