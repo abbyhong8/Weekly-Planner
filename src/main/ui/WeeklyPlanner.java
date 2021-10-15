@@ -142,13 +142,13 @@ public class WeeklyPlanner {
         String choiceTask = scan.nextLine();
         if (choiceTask.equals("1")) {
             System.out.println(taskChoose.isComplete());
-            doVisitDay();
+            backMenu();
         } else if (choiceTask.equals("2")) {
             taskChoose.markComplete();
-            doVisitDay();
+            backMenu();
         } else if (choiceTask.equals("3")) {
             thisDay.removeTask(taskChoose.getWork());
-            doVisitDay();
+            backMenu();
         } else {
             System.out.println("invalid choice");
             backMenu();
