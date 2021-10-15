@@ -46,6 +46,28 @@ public class Day {
     }
 
 
+    //EFFECTS: check how many works are incomplete
+    public int checkIncompleteWork() {
+        int c = 0;
+        if (workToDo.isEmpty()) {
+            return 0;
+        } else {
+            for (int i = 0; i < workToDo.size(); i++) {
+                if (!(getTask(i).isComplete())) {
+                    c = c + 1;
+                }
+            }
+            return c;
+        }
+    }
+
+    //EFFECTS: check if the day is no work
+    public boolean isEmpty() {
+       return workToDo.isEmpty();
+    }
+
+
+
 
 
 

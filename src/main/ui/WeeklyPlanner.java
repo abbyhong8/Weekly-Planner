@@ -43,6 +43,7 @@ public class WeeklyPlanner {
         System.out.println("1. add a event");
         System.out.println("2. Visit one day");
         System.out.println("3. Start a new week");
+        System.out.println("4. Check all incomplete tasks");
         System.out.println("0. quit");
     }
 
@@ -51,13 +52,14 @@ public class WeeklyPlanner {
     public void processChoice(String choice) {
 
 
-
         if (choice.equals("1")) {
             doAddEvent();
         } else if (choice.equals("2")) {
             doVisitDay();
         } else if (choice.equals("3")) {
             doClearWeek();
+        } else if (choice.equals("4")) {
+            doCheckAllTasks();
         } else if (choice.equals("0")) {
             System.exit(0);
         } else {
@@ -94,7 +96,7 @@ public class WeeklyPlanner {
             System.out.println((thisDay.getTask(i)).getWork());
         }
         System.out.println("1. choose an event");
-        System.out.println("2. back to the menu");
+        System.out.println("    2. back to the menu");
         String choice2 = scan.next();
         if (choice2.equals("1")) {
             checkTask(thisDay);
@@ -130,22 +132,28 @@ public class WeeklyPlanner {
         if (choiceTask.equals("1")) {
             return taskChoose.isComplete();
         } else if (choiceTask.equals("2")) {
-            taskChoose.markComplete();
-            backMenu();
+            return taskChoose.markComplete();
         } else if (choiceTask.equals("3")) {
             thisDay.removeTask(taskChoose.getWork());
             backMenu();
         } else {
             System.out.println("invalid choice");
+            backMenu();
         }
         return false;
-    }
+
+    }     //////
 
     //MODIFY: this
     //EFFECT: clear the entire week
     public void doClearWeek() {
         ww.removeAll();
         backMenu();
+    }
+
+    //EFFECT: check all the incomplete tasks
+    public int doCheckAllTasks() {
+        return ww.returnAllIncomplete();
     }
 }
 

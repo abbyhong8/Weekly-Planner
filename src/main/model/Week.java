@@ -40,4 +40,21 @@ public class Week {
     public void removeAll() {
         days = new Day[7];
     }
+
+    //EFFECTS： return the number of all the task
+    public int returnAllIncomplete() {
+        int a = 0;
+        for (int i = 0; i < 7; i++) {
+            if (!(isDayAdded(i))) {
+                a += (getDays()[i]).checkIncompleteWork();
+            }
+        }
+        return a;
+    }
+
+    //EFFECTS: check if the day is added
+    public boolean isDayAdded(int i) {
+        return getDays()[i] == null;
+    }
 }
+
