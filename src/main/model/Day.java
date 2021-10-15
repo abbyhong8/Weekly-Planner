@@ -23,7 +23,7 @@ public class Day {
         workToDo.add(work);
     }
 
-    //REQURIES: The day must include at least one task
+        //REQURIES: The day must include at least one task
     //EFFECTS： get the task
     public Task getTask(int n) {
         return workToDo.get(n);

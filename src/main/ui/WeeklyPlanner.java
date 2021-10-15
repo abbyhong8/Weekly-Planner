@@ -26,7 +26,7 @@ public class WeeklyPlanner {
         String choice = null;
         ww = new Week();
         scan = new Scanner(System.in);
-        choice = scan.next();
+        choice = scan.nextLine();
 
        // display();
         processChoice(choice);
@@ -71,9 +71,9 @@ public class WeeklyPlanner {
     //EFFECTS: create a new task
     public void doAddEvent() {
         System.out.println("Which day in a week is the event on? from(0-6)");
-        String dayNum = scan.next();
+        String dayNum = scan.nextLine();
         System.out.println("What's the name of the event?");
-        String eventName = scan.next();
+        String eventName = scan.nextLine();
         int realDayNum = Integer.parseInt(dayNum);
         Task task = new Task(eventName);
         Day day = new Day(realDayNum);
@@ -88,7 +88,7 @@ public class WeeklyPlanner {
     //EFFECTS: visit all events day
     public void doVisitDay() {
         System.out.println("Which day in a week is the event on?");
-        String choice = scan.next();
+        String choice = scan.nextLine();
 
         int realDayN = Integer.parseInt(choice);
         Day thisDay = ww.getDays()[realDayN];
@@ -96,8 +96,8 @@ public class WeeklyPlanner {
             System.out.println((thisDay.getTask(i)).getWork());
         }
         System.out.println("1. choose an event");
-        System.out.println("    2. back to the menu");
-        String choice2 = scan.next();
+        System.out.println("2. back to the menu");
+        String choice2 = scan.nextLine();
         if (choice2.equals("1")) {
             checkTask(thisDay);
         } else if (choice2.equals("2")) {
@@ -108,7 +108,7 @@ public class WeeklyPlanner {
     //EFFECTS: back to the menu
     public void backMenu() {
         display();
-        String choice = scan.next();
+        String choice = scan.nextLine();
 
         processChoice(choice);
     }
@@ -118,9 +118,9 @@ public class WeeklyPlanner {
 
 
 
-    public boolean checkTask(Day thisDay) {
+    public void checkTask(Day thisDay) {
         System.out.println("Enter the task you want to check");
-        String choice = scan.next();
+        String choice = scan.nextLine();
         int taskN = Integer.parseInt(choice);
         Task taskChoose;
         taskChoose = thisDay.getTask(taskN - 1);
@@ -128,11 +128,13 @@ public class WeeklyPlanner {
         System.out.println("2. Mark as completed");
         System.out.println("3. Remove the task");
         System.out.println("4. Back to the menu");
-        String choiceTask = scan.next();
+        String choiceTask = scan.nextLine();
         if (choiceTask.equals("1")) {
-            return taskChoose.isComplete();
+            System.out.println(taskChoose.isComplete());
+            backMenu();
         } else if (choiceTask.equals("2")) {
-            return taskChoose.markComplete();
+            taskChoose.markComplete();
+            backMenu();
         } else if (choiceTask.equals("3")) {
             thisDay.removeTask(taskChoose.getWork());
             backMenu();
@@ -140,7 +142,6 @@ public class WeeklyPlanner {
             System.out.println("invalid choice");
             backMenu();
         }
-        return false;
 
     }     //////
 
@@ -160,20 +161,4 @@ public class WeeklyPlanner {
 
 
 
-//
-//        if (choice.equals("1")) {
-//        System.out.println("Which day in a week is the event on?");
-//        String dayNum = scan.next();
-//        System.out.println("What's the name of the event?");
-//        String eventName = scan.next();
-//        int realDayNum = Integer.parseInt(dayNum);
-//        Task task = new Task(eventName);
-//        Day day = new Day(realDayNum);
-//        day.addTask(task);
-//        ww.addDay(day);
-//        }
-//        if (choice.equals("2")) {
-//        System.out.println("which day in a week your want to look at?");
-//        String dayN = scan.next();
-//        int realDayN = Integer.parseInt(dayN);
-//        ww.getDays();
+

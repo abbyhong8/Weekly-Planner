@@ -17,5 +17,6 @@ weekly because week is a suitable period for people to plan.
 * As a user, I want to be able to check the completion of each task
 * As a user, I want to be able to view the list of tasks on one day
 * As a user, I want to be able to delete a task from one day
-8 As a user, I want to be able to start a new week
+* As a user, I want to be able to start a new week
+* As a user, I want to be able to check the total incomplete tasks
 

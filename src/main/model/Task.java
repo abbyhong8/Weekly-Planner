@@ -25,7 +25,7 @@ public class Task {
         return true;
     }
 
-    //EFFECTS: to check if the work is comple
+    //EFFECTS: to check if the work is complete
     public boolean isComplete() {
         return this.completion;
     }
