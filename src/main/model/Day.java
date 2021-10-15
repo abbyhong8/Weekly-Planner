@@ -63,7 +63,8 @@ public class Day {
 
     //EFFECTS: check if the day is no work
     public boolean isEmpty() {
-       return workToDo.isEmpty();
+        boolean empty = workToDo.isEmpty();
+        return empty;
     }
 
 
