@@ -1,10 +1,15 @@
 package model;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
 
 //Day is a list of Tasks for every day.
-public class Day {
+public class Day implements Writable {
     private ArrayList<Task> workToDo;  //a day with a list of task
     private int dayNumInWeek;          // the day number
 
@@ -68,8 +73,24 @@ public class Day {
         return empty;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("dayNumber", dayNumInWeek);
+        json.put("works", worksToJson());
+        return json;
+    }
 
+    // EFFECT:
+    public JSONArray worksToJson() {
+        JSONArray jsonArray = new JSONArray();
 
+        for (Task t: workToDo) {
+            jsonArray.put(t.toJson());
+        }
+
+        return jsonArray;
+    }
 
 
 

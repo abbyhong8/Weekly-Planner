@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import model.Task;
 import model.Week;
 import model.Day;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +21,15 @@ public class WeekTest {
     void setUp() {
         week = new Week();
     }
+
+//    @Test
+//    public void testIsEMpty() {
+//       week.isEmpty();
+//       Day day1 = new Day(6);
+//       week.addDay(day1);
+//       assertFalse(week.isEmpty());
+//
+//    }
 
     @Test
     public void testAdd() {
@@ -96,6 +107,11 @@ public class WeekTest {
     }
 
     @Test
+    public void testSize() {
+        assertEquals(7,week.size());
+    }
+
+    @Test
     public void testIsDayAdded() {
         Day day1 = new Day(6);
         Day day2 = new Day(5);
@@ -109,4 +125,20 @@ public class WeekTest {
         assertTrue(week.isDayAdded(1));
 
     }
+
+    @Test
+    public void testWeekToJson() {
+        Day day1 = new Day(6);
+        day1.addTask(new Task("Eat"));
+        week.addDay(day1);
+        JSONObject json = week.toJson();
+       JSONArray a1 = json.getJSONArray("days");
+       assertEquals(1,a1.length());
+        JSONObject d1 = a1.getJSONObject(0);
+        JSONArray dw = d1.getJSONArray("works");
+        JSONObject w1 = dw.getJSONObject(0);
+        assertEquals("Eat",
+        w1.getString("work"));
+    }
+
 }

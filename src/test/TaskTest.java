@@ -1,5 +1,6 @@
 import model.Day;
 import model.Task;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +20,14 @@ public class TaskTest {
         assertFalse(task.isComplete());
         task.markComplete();
         assertTrue(task.isComplete());
+
+    }
+
+    @Test
+    public void testToJson() {
+        task = new Task("Math test");
+        JSONObject json = task.toJson();
+        assertEquals("Math test", json.getString("work"));
 
     }
 

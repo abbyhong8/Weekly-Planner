@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import model.Day;
 import model.Task;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -70,6 +71,24 @@ public class DayTest {
         set.addTask(new Task("CPSC test"));
         assertFalse(set.isEmpty());
 
+    }
+
+    @Test
+    public void testToJson() {
+        set.addTask(new Task("Math test"));
+        JSONObject json = set.toJson();
+
+       assertEquals("Math test",
+               json.getJSONArray("works").getJSONObject(0).getString("work"));
+    }
+
+    @Test
+    public void testWorksToJson() {
+        set.addTask(new Task("Math test"));
+        set.addTask(new Task("CPSC test"));
+        JSONObject json = set.toJson();
+        assertEquals("Math test",
+                json.getJSONArray("works").getJSONObject(0).getString("work"));
     }
 
 

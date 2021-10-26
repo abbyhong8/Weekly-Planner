@@ -24,6 +24,6 @@ and make a plan for the entire week.
 * As a user, I want to be able to delete a task from one day
 * As a user, I want to be able to start a new week
 * As a user, I want to be able to check the number of all incomplete tasks in a week
-* As a user, I want to be able to choose to save my weekly planner after I click on quit
+* As a user, I want to be able to choose to save my weekly planner before I click on quit
 * As a user, I want to be able to choose to load my weekly planner after I start the application
 

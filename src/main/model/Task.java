@@ -1,8 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+
+
 // Task contains a string and a boolean to indicate the task is completed or not, every task is created as incomplete
 
-public class Task {
+public class Task implements persistence.Writable {
     private String work;  // the work to do
     private boolean completion; //to mark whether the work is complete or not, true is complete false is incomplete
 
@@ -29,6 +32,15 @@ public class Task {
     //EFFECTS: to check if the work is complete
     public boolean isComplete() {
         return this.completion;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("work", work);
+        json.put("completion",completion);
+        return json;
+
     }
 
 

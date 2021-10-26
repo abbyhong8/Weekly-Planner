@@ -2,12 +2,20 @@ package ui;
 
 import model.*;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 // runner application for weekly planner
 public class WeeklyPlanner {
+    private static final String JSON_STORE = "./data/workroom.json";
     private Week ww;
     private Scanner scan;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+
 
 
 
@@ -26,6 +34,8 @@ public class WeeklyPlanner {
         String choice = null;
         ww = new Week();
         scan = new Scanner(System.in);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         choice = scan.nextLine();
         Day day1 = new Day(0);
         Day day2 = new Day(1);
@@ -57,6 +67,8 @@ public class WeeklyPlanner {
         System.out.println("2. Visit one day (please enter an integer between 0-6)");
         System.out.println("3. Start a new week");
         System.out.println("4. Show the number of incomplete tasks");
+        System.out.println("5. Save the week");
+        System.out.println("6. load a week");
         System.out.println("0. quit");
     }
 
@@ -73,6 +85,12 @@ public class WeeklyPlanner {
             doClearWeek();
         } else if (choice.equals("4")) {
             doCheckAllTasks();
+        } else if (choice.equals("5")) {
+            doSaveAll();
+            backMenu();
+        } else if (choice.equals("6")) {
+            doShowAll();
+            backMenu();
         } else if (choice.equals("0")) {
             System.exit(0);
         } else {
@@ -168,6 +186,29 @@ public class WeeklyPlanner {
     public void doCheckAllTasks() {
         System.out.println(ww.returnAllIncomplete());
         backMenu();
+    }
+
+    //EFFECy: save all the tasks, days in the week
+    public void doSaveAll() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(ww);
+            jsonWriter.close();
+            System.out.println("Saved the week to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads the week from file
+    private void doShowAll() {
+        try {
+            ww = jsonReader.read();
+            System.out.println("Loaded the week from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 }
 
