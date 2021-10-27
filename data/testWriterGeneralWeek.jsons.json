@@ -1,0 +1,31 @@
+{"days": [{
+  "works": [{
+    "completion": false,
+    "work": "a"
+  }],
+  "dayNumber": 0
+},
+  {
+    "works": [],
+    "dayNumber": 1
+  },
+  {
+    "works": [],
+    "dayNumber": 2
+  },
+  {
+    "works": [],
+    "dayNumber": 3
+  },
+  {
+    "works": [],
+    "dayNumber": 4
+  },
+  {
+    "works": [],
+    "dayNumber": 5
+  },
+  {
+    "works": [],
+    "dayNumber": 6
+  }]}

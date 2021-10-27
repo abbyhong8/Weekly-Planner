@@ -1,9 +1,15 @@
 {"days": [
     {
-        "works": [{
-            "completion": false,
-            "work": "abb"
-        }],
+        "works": [
+            {
+                "completion": false,
+                "work": "abb"
+            },
+            {
+                "completion": false,
+                "work": "edd"
+            }
+        ],
         "dayNumber": 0
     },
     {

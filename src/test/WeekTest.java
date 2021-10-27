@@ -127,7 +127,7 @@ public class WeekTest {
     }
 
     @Test
-    public void testWeekToJson() {
+    public void testToJson() {
         Day day1 = new Day(6);
         day1.addTask(new Task("Eat"));
         week.addDay(day1);
@@ -139,6 +139,20 @@ public class WeekTest {
         JSONObject w1 = dw.getJSONObject(0);
         assertEquals("Eat",
         w1.getString("work"));
+    }
+
+    @Test
+    public void testDaysToJson() {
+        Day day1 = new Day(6);
+        day1.addTask(new Task("Eat"));
+        week.addDay(day1);
+        JSONArray json = week.daysToJson();
+        JSONObject a1 = json.getJSONObject(0);
+        JSONArray b1 = a1.getJSONArray("works");
+        JSONObject w1 = b1.getJSONObject(0);
+        assertEquals("Eat",
+                w1.getString("work"));
+
     }
 
 }

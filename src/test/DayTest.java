@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import model.Day;
 import model.Task;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -86,9 +87,9 @@ public class DayTest {
     public void testWorksToJson() {
         set.addTask(new Task("Math test"));
         set.addTask(new Task("CPSC test"));
-        JSONObject json = set.toJson();
+        JSONArray json = set.worksToJson();
         assertEquals("Math test",
-                json.getJSONArray("works").getJSONObject(0).getString("work"));
+                json.getJSONObject(0).getString("work"));
     }
 
 
