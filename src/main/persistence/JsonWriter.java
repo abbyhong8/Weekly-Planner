@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+//reference to JsonSerializationDemo.jar.JsomWriter;
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
