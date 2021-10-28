@@ -69,12 +69,14 @@ public class Week implements persistence.Writable {
 
 
     @Override
+    //EFFECTS: return a week to the file as a JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("days", daysToJson());
         return json;
     }
 
+    //EFFECTS: return a list of days to a week as a JSON array
     public JSONArray daysToJson() {
         JSONArray jsonArray = new JSONArray();
 

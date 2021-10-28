@@ -74,6 +74,7 @@ public class Day implements Writable {
     }
 
     @Override
+    //EFFECTS: return one day in the week as a JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("dayNumber", dayNumInWeek);
@@ -81,7 +82,7 @@ public class Day implements Writable {
         return json;
     }
 
-    // EFFECT:
+    // EFFECT: return list of tasks in the day as a JSON Array
     public JSONArray worksToJson() {
         JSONArray jsonArray = new JSONArray();
 

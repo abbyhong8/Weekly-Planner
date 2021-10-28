@@ -17,7 +17,7 @@ public class JsonReader {
         this.source = source;
     }
 
-    //EFFECTS: reads tasks from file and return it;
+    //EFFECTS: reads week from file and return it;
     //throws IOException if an error occurs reading data from file
     public Week read() throws IOException {
         String jsonData = readFile(source);
@@ -45,7 +45,7 @@ public class JsonReader {
 //        return d;
 //    }
 
-    //EFFECTS: parses tasks from JSON object and returns it
+    //EFFECTS: parses week from JSON object and returns it
     private Week parseWeek(JSONObject jsonObject) {
        // Integer week = jsonObject.getInt("week");
         Week d = new Week();
@@ -85,7 +85,7 @@ public class JsonReader {
         }
     }
 
-    // MODIFIES: wr
+    // MODIFIES: d
     // EFFECTS: parses task from JSON object and adds it to day
     private void addTask(Day d, JSONObject jsonObject) {
         String name = jsonObject.getString("work");

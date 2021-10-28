@@ -10,7 +10,7 @@ import persistence.JsonWriter;
 
 // runner application for weekly planner
 public class WeeklyPlanner {
-    private static final String JSON_STORE = "./data/workroom.json";
+    private static final String JSON_STORE = "./data/week.json";
     private Week ww;
     private Scanner scan;
     private JsonWriter jsonWriter;
@@ -188,7 +188,7 @@ public class WeeklyPlanner {
         backMenu();
     }
 
-    //EFFECy: save all the tasks, days in the week
+    //EFFECTS: save all the tasks, days in the week
     public void doSaveAll() {
         try {
             jsonWriter.open();

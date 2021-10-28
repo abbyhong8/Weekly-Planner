@@ -35,6 +35,7 @@ public class Task implements persistence.Writable {
     }
 
     @Override
+    //EFFECTS: returns tasks in the day as a JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("work", work);
