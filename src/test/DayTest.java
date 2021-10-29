@@ -85,11 +85,16 @@ public class DayTest {
 
     @Test
     public void testWorksToJson() {
-        set.addTask(new Task("Math test"));
-        set.addTask(new Task("CPSC test"));
+        Task task1 = new Task("EAT");
+        set.addTask(task1);
         JSONArray json = set.worksToJson();
-        assertEquals("Math test",
+        assertEquals("EAT",
                 json.getJSONObject(0).getString("work"));
+        assertFalse(json.getJSONObject(0).getBoolean("completion"));
+        task1.markComplete();
+        set.addTask(task1);
+        JSONArray json2 = set.worksToJson();
+        assertTrue(json2.getJSONObject(0).getBoolean("completion"));
     }
 
 
