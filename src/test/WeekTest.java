@@ -144,12 +144,12 @@ public class WeekTest {
         task1.markComplete();
         day1.addTask(task1);
         JSONObject json2 = week.toJson();
-        JSONArray a2 = json.getJSONArray("days");
+        JSONArray a2 = json2.getJSONArray("days");
         assertEquals(1,a2.length());
         JSONObject d2 = a2.getJSONObject(0);
         JSONArray dw1 = d2.getJSONArray("works");
         JSONObject w2 = dw1.getJSONObject(0);
-        assertFalse(w2.getBoolean("completion"));
+        assertTrue(w2.getBoolean("completion"));
     }
 
     @Test
