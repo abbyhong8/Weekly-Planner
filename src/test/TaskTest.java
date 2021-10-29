@@ -28,6 +28,11 @@ public class TaskTest {
         task = new Task("Math test");
         JSONObject json = task.toJson();
         assertEquals("Math test", json.getString("work"));
+        assertFalse(json.getBoolean("completion"));
+        task = new Task("Math quiz");
+        task.markComplete();
+        JSONObject json2 = task.toJson();
+        assertTrue(json2.getBoolean("completion"));
 
     }
 
