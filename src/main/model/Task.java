@@ -2,6 +2,8 @@ package model;
 
 import org.json.JSONObject;
 
+import javax.swing.*;
+
 
 // Task contains a string and a boolean to indicate the task is completed or not, every task is created as incomplete
 

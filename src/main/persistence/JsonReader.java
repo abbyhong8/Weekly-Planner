@@ -90,7 +90,14 @@ public class JsonReader {
     // EFFECTS: parses task from JSON object and adds it to day
     private void addTask(Day d, JSONObject jsonObject) {
         String name = jsonObject.getString("work");
-        Task task = new Task(name);
-        d.addTask(task);
+        Boolean completion = jsonObject.getBoolean("completion");
+        if (completion) {
+            Task task = new Task(name);
+            task.markComplete();
+            d.addTask(task);
+        } else {
+            Task task = new Task(name);
+            d.addTask(task);
+        }
     }
 }

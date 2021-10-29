@@ -1,9 +1,6 @@
 {"days": [
     {
-        "works": [{
-            "completion": false,
-            "work": "acc"
-        }],
+        "works": [],
         "dayNumber": 0
     },
     {
@@ -11,7 +8,10 @@
         "dayNumber": 1
     },
     {
-        "works": [],
+        "works": [{
+            "completion": true,
+            "work": "cdd"
+        }],
         "dayNumber": 2
     },
     {
