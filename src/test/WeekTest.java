@@ -128,8 +128,9 @@ public class WeekTest {
 
     @Test
     public void testToJson() {
+        Task task1 = new Task("Eat");
         Day day1 = new Day(6);
-        day1.addTask(new Task("Eat"));
+        day1.addTask(task1);
         week.addDay(day1);
         JSONObject json = week.toJson();
        JSONArray a1 = json.getJSONArray("days");
@@ -137,14 +138,25 @@ public class WeekTest {
         JSONObject d1 = a1.getJSONObject(0);
         JSONArray dw = d1.getJSONArray("works");
         JSONObject w1 = dw.getJSONObject(0);
+        assertFalse(w1.getBoolean("completion"));
         assertEquals("Eat",
         w1.getString("work"));
+        task1.markComplete();
+        day1.addTask(task1);
+        JSONObject json2 = week.toJson();
+        JSONArray a2 = json.getJSONArray("days");
+        assertEquals(1,a2.length());
+        JSONObject d2 = a2.getJSONObject(0);
+        JSONArray dw1 = d2.getJSONArray("works");
+        JSONObject w2 = dw1.getJSONObject(0);
+        assertFalse(w2.getBoolean("completion"));
     }
 
     @Test
     public void testDaysToJson() {
+        Task task1 = new Task("Eat");
         Day day1 = new Day(6);
-        day1.addTask(new Task("Eat"));
+        day1.addTask(task1);
         week.addDay(day1);
         JSONArray json = week.daysToJson();
         JSONObject a1 = json.getJSONObject(0);
@@ -152,6 +164,13 @@ public class WeekTest {
         JSONObject w1 = b1.getJSONObject(0);
         assertEquals("Eat",
                 w1.getString("work"));
+        assertFalse(w1.getBoolean("completion"));
+        task1.markComplete();
+        JSONArray json2 = week.daysToJson();
+        JSONObject a = json2.getJSONObject(0);
+        JSONArray b = a.getJSONArray("works");
+        JSONObject w = b.getJSONObject(0);
+        assertTrue(w.getBoolean("completion"));
 
     }
 
