@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 //reference to JsonSerializationDemo.jar.JsomReader
+//A Json Reader class from persistence package;
 public class JsonReader {
     private String source;
 

@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 //reference to JsonSerializationDemo.jar.JsomWriter;
+//A Json Writer class to persistence package;
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
