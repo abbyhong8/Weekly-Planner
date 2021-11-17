@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class Background extends JComponent{
+public class Background extends JComponent {
     private Image image;
 
     public Background(Image image) {

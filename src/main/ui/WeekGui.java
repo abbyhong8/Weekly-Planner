@@ -79,7 +79,7 @@ public class WeekGui extends JFrame implements ActionListener {
             new AddTaskWindow(this, this.week, this.day);
         } else if (action.equals(MARK_COMPLETED)) {
             int i = taskTable.getSelectedRow();
-            Task task = day.getTask(i );
+            Task task = day.getTask(i);
             task.markComplete();
             taskTable.setValueAt((Object) day.getTask(i).isComplete(), i, 2);
             try {
