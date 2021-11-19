@@ -189,13 +189,7 @@ public class WeekGui extends JFrame implements ActionListener {
             Task task = day.getTask(i);
             task.markComplete();
             taskTable.setValueAt((Object) day.getTask(i).isComplete(), i, 2);
-//            try {
-//                jsonWriter.open();
-//                jsonWriter.write(this.week);
-//                jsonWriter.close();
-//            } catch (FileNotFoundException ex) {
-//                ex.printStackTrace();
-//            }
+
         }
         mainGui.repaint();
 
