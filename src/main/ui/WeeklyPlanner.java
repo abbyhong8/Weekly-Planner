@@ -32,7 +32,11 @@ public class WeeklyPlanner {
     //EFFECTS: process the user input
     public void runPlanner() {
         String choice = null;
-        ww = new Week();
+
+
+
+
+
         scan = new Scanner(System.in);
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
@@ -75,8 +79,6 @@ public class WeeklyPlanner {
     //MODIFY: this
     //EFFECTS: process the user choice
     public void processChoice(String choice) {
-
-
         if (choice.equals("1")) {
             doAddEvent();
         } else if (choice.equals("2")) {
