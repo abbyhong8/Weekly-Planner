@@ -396,8 +396,12 @@ public class WeeklyPlannerMainGui extends JFrame implements ActionListener {
         String myChoice = e.getActionCommand();
         chooseDay(e);
         if (myChoice.equals(SHOW_UNCOMPLETED_TASKS)) {
+
+            ImageIcon image = new ImageIcon("./data/icon.png");
             JOptionPane.showMessageDialog(null,
-                            "You have " + checkCompletion(week) + " tasks to finish!");
+                            "You have " + checkCompletion(week) + " tasks to finish!", null,
+                    0, image);
+
         } else if (myChoice.equals(EMPTY_WEEK_ACTION)) {
             ww = new Week();
             //initiateWeek(ww);
