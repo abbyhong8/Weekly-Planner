@@ -56,16 +56,6 @@ public class WeeklyPlannerMainGui extends JFrame implements ActionListener {
         this.setWindow();
       //  initiateWeek(week);
         this.week = week;
-        //week = new Week();
-        //initiateWeek(week);
-
-        //this.setBackgroundImage();
-//        this.setBackgroundImage();
-//        try {
-//            week = jsonReader.read();
-//        } catch (IOException e) {
-//            System.out.println("unable to read from file");
-//        }
         this.showButtons(week);
         setBackgroundImage();
         pack();
@@ -73,8 +63,7 @@ public class WeeklyPlannerMainGui extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
-//        Color main = new Color()
-//        setBackground();
+
     }
 
     //EFFECTS: set a background image for this frame
@@ -113,22 +102,11 @@ public class WeeklyPlannerMainGui extends JFrame implements ActionListener {
         setLayout(null);
     }
 
-//    private void setBackgroundImage() {
-//        try {
-//            BufferedImage backgroundImage = ImageIO.read(new File("./back.jpeg"));
-//            setContentPane(new Background(backgroundImage));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
 
     // set the bottoms in the main window
     private void showButtons(Week week) {
-        // JLabel chooseOption = new JLabel("choose an option: ", JLabel.);
-//        chooseOption.setBounds(26, 10, 300, 20);
-//        add(chooseOption);
-//        chooseOption.setForeground(Color.black);
+;
         initiateMonday(week);
         initiateTuesday(week);
         initiateWednesday(week);
