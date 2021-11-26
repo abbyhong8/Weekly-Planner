@@ -3,6 +3,7 @@ package model;
 import org.json.JSONObject;
 
 import javax.swing.*;
+import java.util.Iterator;
 
 
 // Task contains a string and a boolean to indicate the task is completed or not, every task is created as incomplete
@@ -16,6 +17,7 @@ public class Task implements persistence.Writable {
     public Task(String taskName) {
         this.work = taskName;
         this.completion = false;
+
     }
 
     // REQURIES: the work should be a non-zero length
@@ -28,6 +30,7 @@ public class Task implements persistence.Writable {
     //EFFECTS: to mark the work is done
     public boolean markComplete() {
         this.completion = true;
+        EventLog.getInstance().logEvent(new Event("Task is completed"));
         return true;
     }
 
@@ -36,12 +39,21 @@ public class Task implements persistence.Writable {
         return this.completion;
     }
 
+    public void quitTask() {
+        for (Iterator<Event> it = EventLog.getInstance().iterator(); it.hasNext(); ) {
+            Event e = it.next();
+            System.out.println(e);
+        }
+    }
+
     @Override
     //EFFECTS: returns tasks in the day as a JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("work", work);
         json.put("completion",completion);
+        EventLog.getInstance().logEvent(new Event("The task is saved"));
+
         return json;
 
     }

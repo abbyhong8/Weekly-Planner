@@ -27,3 +27,31 @@ and make a plan for the entire week.
 * As a user, I want to be able to choose to save my weekly planner before I click on quit
 * As a user, I want to be able to choose to load my weekly planner after I start the application
 
+Phase 4: Task2<br>
+Thu Nov 25 17:06:49 PST 2021<br>
+Day0 is added to the week<br>
+Thu Nov 25 17:06:49 PST 2021<br>
+Day1 is added to the week<br>
+Thu Nov 25 17:06:49 PST 2021<br>
+Day2 is added to the week<br>
+Thu Nov 25 17:06:49 PST 2021<br>
+Day3 is added to the week<br>
+Thu Nov 25 17:06:49 PST 2021<br>
+Day4 is added to the week<br>
+Thu Nov 25 17:06:49 PST 2021<br>
+Day5 is added to the week<br>
+Thu Nov 25 17:06:49 PST 2021<br>
+Day6 is added to the week<br>
+Thu Nov 25 17:07:10 PST 2021<br>
+New Task Eat is added to the day<br>
+Thu Nov 25 17:07:10 PST 2021<br>
+Day0 is added to the week<br>
+Thu Nov 25 17:07:25 PST 2021<br>
+New Task Sleep is added to the day<br>
+Thu Nov 25 17:07:25 PST 2021<br>
+Day1 is added to the week<br>
+
+Phase 4: Task3<br>
+Based on the UML diagram, I should make improvements by adding the getting methods in the Weekly planner main gui
+and the week gui since I need to call the week and the day everytime I open a new window. Therefore, I can avoid adding
+repetitive parameters to the new gui.

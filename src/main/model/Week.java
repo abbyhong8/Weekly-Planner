@@ -3,6 +3,8 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.Iterator;
+
 //Week contains a list of seven days that included tasks in each day
 public class Week implements persistence.Writable {
     private Day[] days; // is a integer from [0-6] seven days in a week. 0 is Sunday, 1 is Monday, 2 is Tuesday,
@@ -23,6 +25,7 @@ public class Week implements persistence.Writable {
     //EFFECTS: add a day to the week with the corresponding day number.
     public void addDay(Day day) {
         days[day.getDayNumInWeek()] = day;
+        EventLog.getInstance().logEvent(new Event("Day" + day.getDayNumInWeek() + " is added to the week"));
     }
 
     //EFFECTS: get the length of the days
@@ -36,6 +39,7 @@ public class Week implements persistence.Writable {
     //EFFECTS: remove a day from the week with the corresponding day number.
     public void removeDay(int dn) {
         days[dn] = null;
+        EventLog.getInstance().logEvent(new Event("Day" + dn + " is removed from the week"));
     }
 
 //    //EFFECTS: check if the week is empty?
@@ -49,6 +53,7 @@ public class Week implements persistence.Writable {
     //EFFECTS: remove all the days from the week and make a new week
     public void removeAll() {
         days = new Day[7];
+        EventLog.getInstance().logEvent(new Event("All seven days are removed from the day"));
     }
 
     //EFFECTS： return the number of all the task
@@ -73,7 +78,10 @@ public class Week implements persistence.Writable {
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("days", daysToJson());
+        Event event = new Event("The week is saved");
+        EventLog.getInstance().logEvent(new Event("The week is saved"));
         return json;
+
     }
 
     //EFFECTS: return a list of days to a week as a JSON array
@@ -86,6 +94,13 @@ public class Week implements persistence.Writable {
             }
         }
         return jsonArray;
+    }
+
+    public void quit() {
+        for (Iterator<Event> it = EventLog.getInstance().iterator(); it.hasNext(); ) {
+            Event e = it.next();
+            System.out.println(e);
+        }
     }
 }
 

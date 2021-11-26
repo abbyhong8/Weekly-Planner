@@ -3,6 +3,7 @@ package model;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,6 +28,7 @@ public class Day implements Writable {
     //EFFECTS: add the work you need to complete
     public void addTask(Task work) {
         workToDo.add(work);
+        EventLog.getInstance().logEvent(new Event("New Task " + work.getWork() + " is added to the day"));
     }
 
 
@@ -43,6 +45,7 @@ public class Day implements Writable {
     //EFFECTS: remove the work
     public void removeTask(String s) {
         workToDo.removeIf(t -> t.getWork().equals(s));
+        EventLog.getInstance().logEvent(new Event("Task is removed from the day"));
     }
 
 
@@ -73,12 +76,22 @@ public class Day implements Writable {
         return empty;
     }
 
+//    public void quitDay() {
+//
+//        for (Iterator<Event> it = EventLog.getInstance().iterator(); it.hasNext(); ) {
+//            Event e = it.next();
+//            System.out.println(e);
+//        }
+//       // System.out.println(EventLog.getInstance().iterator().toString());
+//    }
+
     @Override
     //EFFECTS: return one day in the week as a JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("dayNumber", dayNumInWeek);
         json.put("works", worksToJson());
+        EventLog.getInstance().logEvent(new Event("The day is saved"));
         return json;
     }
 

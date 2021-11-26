@@ -1,6 +1,7 @@
 package ui;
 
 import model.*;
+import model.Event;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -101,6 +102,11 @@ public class WeeklyPlannerMainGui extends JFrame implements ActionListener {
         ((JPanel) getContentPane()).setBorder(new EmptyBorder(13, 13, 13, 13));
         setLayout(null);
     }
+
+//    //return the week in the gui
+//    public Week getWeek() {
+//        return week;
+//    }
 
 
 
@@ -369,6 +375,15 @@ public class WeeklyPlannerMainGui extends JFrame implements ActionListener {
 
     }
 
+    //print all the event log
+    public void printEventLog() {
+        for (Event event : EventLog.getInstance()) {
+            System.out.println(event);
+        }
+    }
+
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String myChoice = e.getActionCommand();
@@ -391,6 +406,13 @@ public class WeeklyPlannerMainGui extends JFrame implements ActionListener {
             loadWeek();
 
         } else if (myChoice.equals(QUIT_APP_ACTION)) {
+            printEventLog();
+
+
+//            week.quit();
+//            for (int i = 0; i <= 6; i++) {
+//                week.getDays()[i].quitDay();
+//            }
             System.exit(0);
         }
     }

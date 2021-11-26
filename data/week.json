@@ -1,26 +1,20 @@
 {"days": [
     {
-        "works": [
-            {
-                "completion": false,
-                "work": "EAT"
-            },
-            {
-                "completion": true,
-                "work": "test"
-            }
-        ],
+        "works": [{
+            "completion": false,
+            "work": "eat"
+        }],
         "dayNumber": 0
-    },
-    {
-        "works": [],
-        "dayNumber": 1
     },
     {
         "works": [{
             "completion": false,
-            "work": "Sleep"
+            "work": "Tuesday"
         }],
+        "dayNumber": 1
+    },
+    {
+        "works": [],
         "dayNumber": 2
     },
     {
