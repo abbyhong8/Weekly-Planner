@@ -54,4 +54,5 @@ Day1 is added to the week<br>
 Phase 4: Task3<br>
 Based on the UML diagram, I should make improvements by adding the getting methods in the Weekly planner main gui
 and the week gui since I need to call the week and the day everytime I open a new window. Therefore, I can avoid adding
-repetitive parameters to the new gui.
+repetitive parameters to the new gui. Also, exception package can be introduced in order to catch some 
+exceptions in my project and give the appropriate feedback.
